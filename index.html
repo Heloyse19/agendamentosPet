@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +8,68 @@
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Clínica veterinária Pet</h1>
         <div class="main-content">
             <div class="form-container">
-                <h2>Novo Agendamento</h2>
-                <form id="agendamentoForm"></form>
-                <div class="form-group">
-                    <label>Tutor</label>
-                    <input type="text" id="nomeTutor">
-                </div>
-                
-                <div class="form-group">
-                    <label>Cpf</label>
-                    <input type="text" id="cpfTutor"> 
-                </div>
+                <h2>Novo agendamento</h2>
+                <form id="agendamentoForm">
+                    <div class="form-group">
+                        <label>Tutor</label>
+                        <input type="text" id="nomeTutor" required>
+                    </div>
 
-                <div class="form-group">
-                    <label>Telefone</label>
-                    <input type="text" id="telefoneTutor">
-                </div>
+                    <div class="form-group">
+                        <label>CPF</label>
+                        <input type="text" id="cpfTutor" required>
+                    </div>
 
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" id="emailTutor">
-                </div>
-            </div> 
+                    <div class="form-group">
+                        <label>Telefone</label>
+                        <input type="text" id="telefoneTutor" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="emailTutor" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nome do Pet</label>
+                        <input type="text" id="nomePet" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Peso do Pet (kg)</label>
+                        <input type="number" step="0.1" id="pesoPet" required placeholder="0.0">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tipo de atendimento</label>
+                        <select id="tipoAtendimento" required>
+                            <option value="">Selecione</option>
+                            <option value="consulta">Consulta</option>
+                            <option value="exame">Exame</option>
+                            <option value="cirurgia">Cirurgia</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Data do agendamento</label>
+                        <input type="datetime-local" id="dataAgendamento" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Observações:</label>
+                        <textarea id="observacoes" rows="3" placeholder="observações importantes"></textarea>
+                    </div>
+                    <button type="submit">AGENDAR</button>
+                </form>
+            </div>
         </div>
     </div>
 </body>
+
 </html>

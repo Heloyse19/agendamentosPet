@@ -56,3 +56,20 @@ input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: #667eea;
 }
+
+ button {
+    background: #667eea;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background: #5a67d8;
+}
