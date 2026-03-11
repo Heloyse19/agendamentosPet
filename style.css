@@ -35,6 +35,13 @@ h2 {
     margin-bottom: 15px;
 }
 
+.form-container, .list-container {
+background: #f0f0f0; 
+padding: 25px;
+border-radius: 15px;
+box-shadow: 0 2px 10px rgba(0, 69, 155, 0.1);
+}
+
 label {
     display: block;
     margin-bottom: 5px;
@@ -57,10 +64,19 @@ input:focus, select:focus, textarea:focus {
     border-color: #667eea;
 }
 
+input[type="datetime-local"]{
+    color: #000000;
+}
+
+input[type="datetime-local"]:invalid{
+    color: #999;
+}
+
  button {
     background: #667eea;
     color: white;
-    padding: 12px 25px;
+    padding: 12px 30px;
+    letter-spacing: 0.5px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -68,8 +84,27 @@ input:focus, select:focus, textarea:focus {
     font-weight: 600;
     transition: background 0.3s;
     width: 100%;
+
+    width: auto;
+    min-width: 200px;
+    display: block;
+    margin: 20px auto 0;
 }
 
 button:hover {
     background: #5a67d8;
+}
+
+select{
+    color: #999;
+}
+
+select option[value=""],[value="consulta"], [value="exame"], [value="cirurgia"]{
+    color: #000000;
+    font-style: normal;
+}
+
+select:valid {
+    color: #000000;
+    font-style: normal;
 }
