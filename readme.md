@@ -31,8 +31,8 @@ Sistema web para agendamento de consultas, exames e cirurgias em uma clínica ve
 
 ### 1. Clone o repositório
 
-git clone https://github.com/seu-usuario/clinica-veterinaria.git
-cd clinica-veterinaria
+- git clone https://github.com/seu-usuario/clinica-veterinaria.git
+- cd clinica-veterinaria
 
 ## 2. Configure o EmailJs
 
