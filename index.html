@@ -5,103 +5,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Pet</title>
-    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
         <h1>Clínica veterinária Pet</h1>
-        <!-- barra de progresso -->
-        <div class="progress-bar">
-            <div class="step active" data-step="1">1. Tutor</div>
-            <div class="step" data-step="2">2. Pet</div>
-            <div class="step" data-step="3">3. agendamento</div>
+        
+        <div class="main-content">
+            <!-- Formulário de agendamento -->
+            <div class="form-container">
+                <form id="agendamentoForm">
+                    <!-- Dados do Tutor -->
+                    <h2>Dados do tutor</h2>
+
+                    <div class="form-group">
+                        <label>Tutor</label>
+                        <input type="text" id="nomeTutor" required placeholder="Nome completo">
+                    </div>
+
+                    <div class="form-group">
+                        <label>CPF</label>
+                        <input type="text" id="cpfTutor" required placeholder="000.000.000-00">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Telefone</label>
+                        <input type="text" id="telefoneTutor" required placeholder="(11) 99999-9999">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="emailTutor" required placeholder="exemplo@email.com">
+                    </div>
+
+                    <!-- Dados do Pet -->
+                    <h2 style="margin-top: 25px;">Dados do Pet</h2>
+
+                    <div class="form-group">
+                        <label>Nome do Pet</label>
+                        <input type="text" id="nomePet" required placeholder="Nome do seu pet">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Peso (kg)</label>
+                        <input type="number" step="0.1" id="pesoPet" required placeholder="0.0">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Raça</label>
+                        <input type="text" id="racaPet" required placeholder="Ex: Labrador, SRD...">
+                    </div>
+
+                    <!-- Agendamento -->
+                    <h2 style="margin-top: 25px;">Agendamento</h2>
+
+                    <div class="form-group">
+                        <label>Tipo de atendimento</label>
+                        <select id="tipoAtendimento" required>
+                            <option value="">Selecione</option>
+                            <option value="consulta">Consulta</option>
+                            <option value="exame">Exame</option>
+                            <option value="cirurgia">Cirurgia</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Data do agendamento</label>
+                        <input type="datetime-local" id="dataAgendamento" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Observações</label>
+                        <textarea id="observacoes" rows="3" placeholder="Tem alguma observação importante?"></textarea>
+                    </div>
+
+                    <button type="submit">AGENDAR</button>
+                </form>
+            </div>
+
+            <!-- Lista de agendamentos -->
+            <div class="list-container">
+                <h2>Agendamentos</h2>
+                <div id="agendamentosList">
+                    <!-- Os agendamentos aparecerão aqui -->
+                </div>
+            </div>
         </div>
-
-        <form id="multiStepForm">
-            <div class="form step step-1 active">
-                <h2>Dados do tutor</h2>
-
-                <div class="form-group">
-                    <label>Tutor</label>
-                    <input type="text" id="nomeTutor" required>
-                </div>
-
-                <div class="form-group">
-                    <label>CPF</label>
-                    <input type="text" id="cpfTutor" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Telefone</label>
-                    <input type="text" id="telefoneTutor" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" id="emailTutor" required>
-                </div>
-
-                <div class="form-buttons">
-                    <button type="button" class="btn-next" onclick="nextStep(2)">Próximo</button>
-                </div>
-            </div>
-
-            <div class="form-step step-2">
-                <h2>Dados do Pet</h2>
-
-                <div class="form-group">
-                    <label>Nome</label>
-                    <input type="text" id="nomePet" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Peso (kg)</label>
-                    <input type="number" step="0.1" id="pesoPet" required placeholder="0.0">
-                </div>
-
-                <div class="form-group">
-                    <label>Raça</label>
-                    <input type="text" id="racaPet" required>
-                </div>
-
-                <div class="form-buttons">
-                    <button type="button" class="btn-prev" onclick="prevStep(1)">Voltar</button>
-                    <button type="button" class="btn-next" onclick="nextStep(3)">Próximo</button>
-                </div>
-            </div>
-
-            <div class="form-step step-3">
-                <h2>Agendamento</h2>
-
-                <div class="form-group">
-                    <label>Tipo de atendimento</label>
-                    <select id="tipoAtendimento" required>
-                        <option value="">Selecione</option>
-                        <option value="consulta">Consulta</option>
-                        <option value="exame">Exame</option>
-                        <option value="cirurgia">Cirurgia</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Data</label>
-                    <input type="datetime-local" id="dataAgendamento" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Observações</label>
-                    <textarea id="observacoes" rows="3" placeholder="Tem alguma observação importante?"></textarea>
-                </div>
-
-                <div class="form-buttons">
-                    <button type="button" class="btn-prev" onclick="prevStep(2)">Voltar</button>
-                    <button type="submit" class="btn-submit">AGENDAR</button>
-                </div>
-            </div>
-        </form>
     </div>
+
+    <script src="config.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
